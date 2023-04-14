@@ -15,13 +15,13 @@ import (
 func main() {
 	c := openai.NewClient(os.Getenv("OPEN_AI_KEY"))
 	ctx := context.Background()
-	f, err := os.Create("./outputs/aws-vm/output2.md")
+	f, err := os.Create("./outputs/aws-vm/output3.md")
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	defer f.Close()
-	fileContent, err := ioutil.ReadFile("prompts/aws-vm.md")
+	fileContent, err := ioutil.ReadFile("./prompts/aws-vm.md")
 	if err != nil {
 		log.Fatal(err)
 	}
