@@ -15,7 +15,7 @@ import (
 func main() {
 	c := openai.NewClient(os.Getenv("OPEN_AI_KEY"))
 	ctx := context.Background()
-	f, err := os.Create("./outputs/aws-vm/output1.md")
+	f, err := os.Create("./outputs/aws-vm/output2.md")
 	if err != nil {
 		log.Fatal(err)
 	}
