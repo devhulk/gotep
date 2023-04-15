@@ -1,6 +1,4 @@
-# Prompt Notes
-
-### hashi-assistant prompts
+# hashi-assistant prompts
 
 The prompts intent is for a Vault User to simply ask.
 ```
@@ -15,7 +13,7 @@ a prompt with 10K plus characters (the model supports 30K plus). That meant I wa
 
 ChatGPT3.5 completely missed the mark and completely fabricated a ton of nonsense. For example it completely made up API endpoints that don't exist. (check outputs folder)
 
-#### GPT 3.5 Prompt
+## GPT 3.5 Prompt
 
 ```
 ## Context
@@ -35,7 +33,7 @@ Highlight any potential gotchas.
 
 ```
 
-#### GPT 3.5 Response
+## GPT 3.5 Response
 
 To automate the promotion of a secondary DR Vault cluster using the Vault API, the following steps can be taken:
 
@@ -93,7 +91,7 @@ Its worth noting that even with the ChatGPT3.5 prompt above the results were "mo
 
 I could still add around another 20K characters worth of content to my prompt with GPT4 which would could potentially provide a much higher degree of accuracy.
 
-#### GPT 4 Prompt
+## GPT 4 Prompt
 ```
 ## Context
 You are an assistant that is an expert in all Hashicorp tooling.
@@ -274,7 +272,7 @@ While you can demote cluster A before promoting cluster B, in production DR scen
 
 ```
 
-#### GPT4 Response
+## GPT4 Response
 
 To automate the promotion of a secondary DR vault cluster using the Vault API, you can follow these steps:
 
