@@ -1,4 +1,4 @@
-# hashi-assistant prompts
+# Vault DR Prompts (GPT3.5 and GPT4)
 
 # Introduction
 
