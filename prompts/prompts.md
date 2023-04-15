@@ -2,9 +2,9 @@
 
 # Introduction
 
-The prompts intent is for a Vault User to simply ask.
+The prompts intent is for a Vault User to simply be able to ask.
 ```
-How do I automate the promotion of my DR cluster?
+How do I automate the promotion of my Vault DR cluster?
 ```
 We may want it to be a little manual but I just wanted to see what ChatGPT would do since its a pretty niche
 technical topic.
@@ -22,6 +22,8 @@ ChatGPT4 had much less obvious errors.
 Its worth noting that even with the ChatGPT3.5 prompt above the results were "more" accurate then the ChatGPT3.5 response. GPT4 just gave a lot more room for additional context.
 
 I could still add around another 20K characters worth of content to my prompt with GPT4 which would could potentially provide a much higher degree of accuracy.
+
+I also found it interesting that ChatGPT3.5's response seemed to be longer and less accurate vs GPT4 had a shorter but seemingly more accurate response.
 
 # Prompts and Responses
 
