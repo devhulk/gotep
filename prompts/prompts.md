@@ -37,7 +37,6 @@ Highlight any potential gotchas.
 
 #### GPT 3.5 Response
 
-```
 To automate the promotion of a secondary DR Vault cluster using the Vault API, the following steps can be taken:
 
 1. Update the configuration of the secondary DR Vault cluster to promote it to a primary cluster.
@@ -86,7 +85,6 @@ curl \
 where `<client_token>` is the client token for the application using the Vault API, `<vault_address>` is the address of the Vault cluster, and `<secret_path>` is the path to the secret being accessed.
 
 Potential gotchas to watch out for include ensuring that the configuration of the promoted Vault cluster is correct, ensuring that all required data is migrated from the old primary cluster to the new one, and ensuring that all applications using the Vault API are reconfigured to point to the new primary cluster. Additionally, if using Hashicorp Enterprise version of Vault, there may be additional steps or considerations for promotion and migration.
-```
 
 
 ChatGPT4 had much less obvious. (below)
@@ -278,7 +276,6 @@ While you can demote cluster A before promoting cluster B, in production DR scen
 
 #### GPT4 Response
 
-```
 To automate the promotion of a secondary DR vault cluster using the Vault API, you can follow these steps:
 
 1. Generate a batch DR operation token on the primary cluster (cluster A).
@@ -328,4 +325,3 @@ curl --request POST --header "X-Vault-Token: <PRIMARY_CLUSTER_VAULT_TOKEN>" --da
 2. Make sure to use the DR operation token when promoting and demoting clusters.
 3. Be cautious about the order of operations, as promoting the new primary before demoting the old primary may be necessary in some production scenarios due to unavailability of the old primary.
 4. Always keep the DR operation token secure and use it judiciously.
-```
