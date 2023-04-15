@@ -1,4 +1,4 @@
-package main
+package openai
 
 import (
 	"context"
@@ -8,37 +8,39 @@ import (
 	"io"
 	"io/ioutil"
 	"log"
-	openai "github.com/sashabaranov/go-openai"
+	opai "github.com/sashabaranov/go-openai"
 )
 
 
-func main() {
-	c := openai.NewClient(os.Getenv("OPEN_AI_KEY"))
+func SubmitPrompt(name string) {
+	c := opai.NewClient(os.Getenv("OPEN_AI_KEY"))
 	ctx := context.Background()
-	f, err := os.Create("./outputs/aws-vm/output3.md")
+	f, err := os.Create(fmt.Sprintf("./outputs/hashi-assistant/%v.md", name))
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	defer f.Close()
-	fileContent, err := ioutil.ReadFile("./prompts/aws-vm.md")
+	fileContent, err := ioutil.ReadFile("./prompts/hashicorp-assistant.md")
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	prompt := string(fileContent)
 
-	req := openai.CompletionRequest{
-		Model:     openai.GPT3TextDavinci003,
-		Temperature: 0.3,
-		MaxTokens: 1620,
-		TopP: 1,
-		BestOf: 1,
-		Prompt: 	prompt,
+	req := opai.ChatCompletionRequest{
+		Model:     opai.GPT3Dot5Turbo,
+		MaxTokens: 3500,
+		Messages: []opai.ChatCompletionMessage{
+			{
+				Role:    opai.ChatMessageRoleUser,
+				Content: prompt,
+			},
+		},
 		Stream: true,
 	}
 
-	stream, err := c.CreateCompletionStream(ctx, req)
+	stream, err := c.CreateChatCompletionStream(ctx, req)
 
 	if err != nil {
 		fmt.Printf("CreateCompletion error: %v\n", err)
@@ -59,11 +61,12 @@ func main() {
 			return
 		}
 
-		line := response.Choices[0].Text
+		line := response.Choices[0].Delta.Content
 
 		f.WriteString(line)
 		fmt.Printf(line)
 
 	}
+
 
 }
