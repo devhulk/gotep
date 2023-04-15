@@ -1,5 +1,7 @@
 # hashi-assistant prompts
 
+# Introduction
+
 The prompts intent is for a Vault User to simply ask.
 ```
 How do I automate the promotion of my DR cluster?
@@ -7,11 +9,21 @@ How do I automate the promotion of my DR cluster?
 We may want it to be a little manual but I just wanted to see what ChatGPT would do since its a pretty niche
 technical topic.
 
+# Comparison
+
 Massive differences in accuracy observed between the GPT-3.5 and GPT-4 model. 
 The character limit may play a role here because with GPT4 I was able to submit
 a prompt with 10K plus characters (the model supports 30K plus). That meant I was able to add most of the updated documentation to the prompt so GPT4 didn't have to guess anywhere near as much. 
 
-ChatGPT3.5 completely missed the mark and completely fabricated a ton of nonsense. For example it completely made up API endpoints that don't exist. (check outputs folder)
+ChatGPT3.5 completely missed the mark and completely fabricated a ton of nonsense. For example it completely made up API endpoints that don't exist. 
+
+ChatGPT4 had much less obvious errors. 
+
+Its worth noting that even with the ChatGPT3.5 prompt above the results were "more" accurate then the ChatGPT3.5 response. GPT4 just gave a lot more room for additional context.
+
+I could still add around another 20K characters worth of content to my prompt with GPT4 which would could potentially provide a much higher degree of accuracy.
+
+# Prompts and Responses
 
 ## GPT 3.5 Prompt
 
@@ -85,11 +97,6 @@ where `<client_token>` is the client token for the application using the Vault A
 Potential gotchas to watch out for include ensuring that the configuration of the promoted Vault cluster is correct, ensuring that all required data is migrated from the old primary cluster to the new one, and ensuring that all applications using the Vault API are reconfigured to point to the new primary cluster. Additionally, if using Hashicorp Enterprise version of Vault, there may be additional steps or considerations for promotion and migration.
 
 
-ChatGPT4 had much less obvious. (below)
-
-Its worth noting that even with the ChatGPT3.5 prompt above the results were "more" accurate then the ChatGPT3.5 response. GPT4 just gave a lot more room for additional context.
-
-I could still add around another 20K characters worth of content to my prompt with GPT4 which would could potentially provide a much higher degree of accuracy.
 
 ## GPT 4 Prompt
 ```
